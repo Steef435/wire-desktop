@@ -52,7 +52,7 @@ const _createTrayIcon = () => {
 
     appIcon.setToolTip(config.NAME);
     appIcon.setContextMenu(contextMenu);
-    appIcon.on('click', () => windowManager.showPrimaryWindow());
+    appIcon.on('click', () => windowManager.togglePrimaryWindow());
   }
 };
 

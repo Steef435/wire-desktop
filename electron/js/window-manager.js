@@ -39,9 +39,20 @@ const _showPrimaryWindow = () => {
   win.focus();
 };
 
+const _togglePrimaryWindow = () => {
+  const win = _getPrimaryWindow();
+
+  if (win.isMinimized() || !win.isVisible()) {
+    _showPrimaryWindow();
+  } else {
+    win.close();
+  }
+};
+
 
 module.exports = {
   getPrimaryWindow: _getPrimaryWindow,
   setPrimaryWindowId: _setPrimaryWindowId,
   showPrimaryWindow: _showPrimaryWindow,
+  togglePrimaryWindow: _togglePrimaryWindow,
 };
